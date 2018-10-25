@@ -4,7 +4,14 @@ const makeConstant = function(arg) {
   }
 }
 
-const makeCounterFromN = undefined;
+const makeCounterFromN = function(arg){
+  let count = -1;
+  return function(){
+    count++;
+    return arg+count;
+  }
+}
+
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
 const makeFiboGenerator = undefined;
