@@ -1,37 +1,7 @@
 const makeConstant = function(arg) {
-  let string = ""+arg
-  switch(string){
-    case "2" :
-      return constantlyReturnTwo;
-      break;
-
-    case "hello" :
-      return constantlyReturnString;
-      break;
-
-    case "1,2,3" :
-      return constantlyReturnArray;
-      break;
-
-    default :
-      return constantlyReturnObject;
+  return function(){
+    return arg;
   }
-}
-
-const constantlyReturnTwo = function() {
-  return 2;
-}
-
-const constantlyReturnString = function() {
-  return "hello";
-}
-
-const constantlyReturnArray = function() {
-  return [1,2,3];
-}
-
-const constantlyReturnObject = function() {
-  return { a : 1, b : 2 };
 }
 
 const makeCounterFromN = undefined;
