@@ -22,7 +22,7 @@ const makeCounterFromZero = function(){
 const makeDeltaTracker = function(old){
   let count = 0;
   return trackDelta = function(delta){
-       let oldDeltas = old + count;
+    let oldDeltas = old + count;
     let deltas = delta;
     if(delta == undefined){
       deltas = 0;
@@ -38,10 +38,21 @@ const makeDeltaTracker = function(old){
   }
 }
 
-    
+const makeCycler = function(array){
+  let count = 0;
+  let args = [];
+  for(let i = 0; i < array.length; i++){
+    args.push(array[i]);
+  }
+  let preLength = args.length;
+  return function(){
+    let index = count % preLength;
+    count++;
+    return args[index];
+  }
+}
 
 const makeFiboGenerator = undefined;
-const makeCycler = undefined;
 const curry = undefined;
 const compose = undefined;
 
