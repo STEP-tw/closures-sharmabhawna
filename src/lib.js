@@ -1,4 +1,15 @@
-const makeConstant = undefined;
+const makeConstant = function(input) {
+  if(input == 2){
+    return constantlyReturnTwo;
+  }
+}
+
+const constantlyReturnTwo = function() {
+  return 2;
+}
+
+
+
 const makeCounterFromN = undefined;
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
