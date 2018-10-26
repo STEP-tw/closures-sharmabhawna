@@ -11,28 +11,16 @@ const makeCounterFromN = function(arg){
 }
 
 const makeCounterFromZero = function(){
-  //let count = 0;
-  //return function(){
-   // return count++;
   return makeCounterFromN(0);
 }
 
 const makeDeltaTracker = function(old){
-  let count = 0;
-  return trackDelta = function(delta){
-    let oldDeltas = old + count;
-    let deltas = delta;
-    if(delta == undefined){
-      deltas = 0;
-    }
-    let newDeltas = oldDeltas + deltas;
-    if(delta > 0){
-      count++;
-    }
+  return trackDelta = function(delta = 0){
+    let total = old + delta;
     if(delta < 0){
-      count--;
+      return { old : old--, delta : delta, new : total };
     }
-    return { old : oldDeltas, delta : deltas, new : newDeltas }
+    return { old : old++, delta : delta, new : total }
   }
 }
 
