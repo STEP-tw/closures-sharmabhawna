@@ -11,10 +11,10 @@ const makeCounterFromN = function(arg){
 }
 
 const makeCounterFromZero = function(){
-  let count = 0;
-  return function(){
-    return count++;
-  }
+  //let count = 0;
+  //return function(){
+   // return count++;
+  return makeCounterFromN(0);
 }
 
 const makeDeltaTracker = function(old){
