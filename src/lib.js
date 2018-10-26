@@ -1,12 +1,12 @@
-const makeConstant = function(arg) {
+const makeConstant = function(constant) {
   return function(){
-    return arg;
+    return constant;
   }
 }
 
-const makeCounterFromN = function(arg){
+const makeCounterFromN = function(initialCounter){
   return function(){
-    return arg++;
+    return initialCounter++;
   }
 }
 
