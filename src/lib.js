@@ -25,16 +25,11 @@ const makeDeltaTracker = function(old){
 }
 
 const makeCycler = function(array){
-  let count = 0;
-  let args = [];
-  for(let i = 0; i < array.length; i++){
-    args.push(array[i]);
-  }
-  let preLength = args.length;
+  let index = 0;
+  newArray = array.map(function (n) { return n } );
+  let length = newArray.length;
   return function(){
-    let index = count % preLength;
-    count++;
-    return args[index];
+    return newArray[index++ % length];
   }
 }
 
