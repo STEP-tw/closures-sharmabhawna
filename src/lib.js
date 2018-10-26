@@ -53,7 +53,12 @@ const makeCycler = function(array){
 }
 
 const makeFiboGenerator = undefined;
-const curry = undefined;
+const curry = function(func, argument){
+  return function(parameter1, parameter2){
+    return func(argument, parameter1, parameter2);
+  }
+}
+
 const compose = undefined;
 
 exports.makeConstant=makeConstant;
