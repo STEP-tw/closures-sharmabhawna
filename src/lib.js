@@ -5,10 +5,8 @@ const makeConstant = function(arg) {
 }
 
 const makeCounterFromN = function(arg){
-  let count = -1;
   return function(){
-    count++;
-    return arg+count;
+    return arg++;
   }
 }
 
