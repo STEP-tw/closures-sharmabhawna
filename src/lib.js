@@ -34,15 +34,15 @@ const makeCycler = function(array){
 }
 
 const makeFiboGenerator = function(arg1, arg2){
-  let firstNum = -arg1;
-  let secondNum = arg2-1;
-  if(arg2 == undefined){ firstNum = -arg1; secondNum = arg1; }
-  if(arg1 == undefined && arg2 == undefined){ secondNum = 1; firstNum = -1; }
+  let preValue = -arg1;
+  let currValue = arg2-1;
+  if(arg2 == undefined){ preValue = -arg1; currValue = arg1; }
+  if(arg1 == undefined && arg2 == undefined){ preValue = -1; currValue = 1; }
   return function(){
-    let nextNum = firstNum + secondNum;
-    firstNum = secondNum;
-    secondNum = nextNum;
-    return nextNum;
+    let nextValue = preValue + currValue;
+    preValue = currValue;
+    currValue = nextValue;
+    return nextValue;
   }
 }
 
