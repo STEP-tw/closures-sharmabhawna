@@ -16,11 +16,9 @@ const makeCounterFromZero = function(){
 
 const makeDeltaTracker = function(old){
   return trackDelta = function(delta = 0){
-    let total = old + delta;
-    if(delta < 0){
-      return { old : old--, delta : delta, new : total };
-    }
-    return { old : old++, delta : delta, new : total }
+    let current = old+delta;
+    old = current;
+    return { old : current-delta, delta : delta, new : current}
   }
 }
 
